@@ -1,7 +1,6 @@
 import { Card } from "antd";
 import React from "react";
-import Link from "next/link"
-import Image from "next/image";
+import Link from "next/link";
 // import {Link} from "react-router-dom"
 
 const Drink = ({ dataDrink }) => {
@@ -15,7 +14,7 @@ const Drink = ({ dataDrink }) => {
                   className="mx-auto rounded-3"
                   hoverable
                   style={{ width: 240 }}
-                  cover={<Image src={item.strDrinkThumb} width={230} height={'auto'} alt={item.strDrink} style={{padding:'15px'}}/>}
+                  cover={<img src={item.strDrinkThumb} width={230} alt={item.strDrink} style={{padding:'15px'}}/>}
                 >
                 <p className="fw-bold">{item.strDrink}</p>
                 <p className="fw-light">{item.strCategory}</p>

@@ -3,7 +3,6 @@ import { useEffect, useState } from 'react'
 import Drink from '../../components/drink'
 import axios from 'axios'
 import { LeftOutlined } from '@ant-design/icons'
-import Image from 'next/image'
 
 export default function Detail(){
     const router = useRouter()
@@ -42,7 +41,7 @@ export default function Detail(){
         <>
             <div className='row align-items-center' style={{height:'100vh'}}>
                 <div className='col-5 text-center'>
-                    <Image src={item.strDrinkThumb} width={230} height={'auto'} className='rounded-3' alt={item.strDrink} />
+                    <img src={item.strDrinkThumb} width={230} className='rounded-3' alt={item.strDrink} />
                 </div>
                 <div className='col'>
                     <h3 className='fw-bold'>{item.strDrink}</h3>
