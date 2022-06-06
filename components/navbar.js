@@ -9,7 +9,7 @@ export default function Navbar() {
 
             </div>
         </div>
-                {/* <img src="bg4.jpg" width={'100%'} height={'480'} style={{ objectFit: 'cover' }} /> */}
+               
         </>
     )
 }

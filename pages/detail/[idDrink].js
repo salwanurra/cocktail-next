@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react'
 import Drink from '../../components/drink'
 import axios from 'axios'
 import { LeftOutlined } from '@ant-design/icons'
+import Image from 'next/image'
 
 export default function Detail(){
     const router = useRouter()
@@ -18,7 +19,7 @@ export default function Detail(){
         .then((result) => {
             setState({posts: result.data.drinks[0]});
         }); 
-    }, [])
+    }, [idDrink])
     const item = state.posts
     let ingredients = [
         (item.strIngredient1),
@@ -41,7 +42,7 @@ export default function Detail(){
         <>
             <div className='row align-items-center' style={{height:'100vh'}}>
                 <div className='col-5 text-center'>
-                    <img src={item.strDrinkThumb} width={230} className='rounded-3' alt={item.strDrink} />
+                    <Image src={item.strDrinkThumb} width={230} className='rounded-3' alt={item.strDrink} />
                 </div>
                 <div className='col'>
                     <h3 className='fw-bold'>{item.strDrink}</h3>
