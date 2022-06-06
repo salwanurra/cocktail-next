@@ -15,7 +15,7 @@ const Drink = ({ dataDrink }) => {
                   className="mx-auto rounded-3"
                   hoverable
                   style={{ width: 240 }}
-                  cover={<Image src={item.strDrinkThumb} alt={item.strDrink} style={{padding:'15px'}}/>}
+                  cover={<Image src={item.strDrinkThumb} width={230} height={'auto'} alt={item.strDrink} style={{padding:'15px'}}/>}
                 >
                 <p className="fw-bold">{item.strDrink}</p>
                 <p className="fw-light">{item.strCategory}</p>
