@@ -9,8 +9,6 @@ import { Breadcrumb } from 'antd'
 export default function Detail(){
     const router = useRouter()
     const {idDrink} = router.query
-
-    // const url = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${idDrink}`
     const [state, setState] = useState({
         posts: []
     })
@@ -21,7 +19,9 @@ export default function Detail(){
             setState({posts: result.data.drinks[0]});
         }); 
     }, [idDrink])
+
     const item = state.posts
+
     let ingredients = [
         (item.strIngredient1),
         (item.strIngredient2),
@@ -39,24 +39,23 @@ export default function Detail(){
         (item.strIngredient14),
         (item.strIngredient15),
     ]
+
     return (
-        <>
+        <div className='overflow-hidden'>
             <div className='row align-items-center' style={{height:'100vh'}}>
                 <div className='col-5 text-center'>
-                <div className='text-start ms-5 mb-4'>
-                <Breadcrumb>
-                    <Breadcrumb.Item href="/" style={{position:'relative', bottom:'3px'}}>
-                        <HomeOutlined/>
-                    </Breadcrumb.Item>
-                    <Breadcrumb.Item>Detail {item.strDrink}</Breadcrumb.Item>
-                </Breadcrumb>
-
-                </div>
+                    <div className='text-start ms-5 mb-4'>
+                    <Breadcrumb>
+                        <Breadcrumb.Item href="/" style={{position:'relative', bottom:'3px'}}>
+                            <HomeOutlined/>
+                        </Breadcrumb.Item>
+                        <Breadcrumb.Item>Detail {item.strDrink}</Breadcrumb.Item>
+                    </Breadcrumb>
+                    </div>
                     <img src={item.strDrinkThumb} width={230} className='rounded-3' alt={item.strDrink} />
                 </div>
                 <div className='col'>
                     <h3 className='fw-bold'>{item.strDrink}</h3>
-                
                     <div className='d-flex'>
                         <div className='fw-bold'>
                             <p>Category</p>
@@ -81,7 +80,6 @@ export default function Detail(){
                     <hr />
                 </div>
             </div>
-        </>
-
+        </div>
     )
 }

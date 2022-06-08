@@ -1,7 +1,6 @@
 import { Card } from "antd";
 import React from "react";
 import Link from "next/link";
-// import {Link} from "react-router-dom"
 
 function Drink({dataDrink}) {
   return (
@@ -18,7 +17,6 @@ function Drink({dataDrink}) {
                 >
                 <p className="fw-bold">{item.strDrink}</p>
                 <p className="fw-light">{item.strCategory}</p>
-                  {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
               </Card>
             </Link>
             </div>
