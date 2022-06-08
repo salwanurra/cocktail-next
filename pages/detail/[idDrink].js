@@ -1,8 +1,10 @@
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Drink from '../../components/drink'
 import axios from 'axios'
-import { LeftOutlined } from '@ant-design/icons'
+import { HomeOutlined, LeftOutlined } from '@ant-design/icons'
+import { Breadcrumb } from 'antd'
 
 export default function Detail(){
     const router = useRouter()
@@ -41,6 +43,15 @@ export default function Detail(){
         <>
             <div className='row align-items-center' style={{height:'100vh'}}>
                 <div className='col-5 text-center'>
+                <div className='text-start ms-5 mb-4'>
+                <Breadcrumb>
+                    <Breadcrumb.Item href="/" style={{position:'relative', bottom:'3px'}}>
+                        <HomeOutlined/>
+                    </Breadcrumb.Item>
+                    <Breadcrumb.Item>Detail {item.strDrink}</Breadcrumb.Item>
+                </Breadcrumb>
+
+                </div>
                     <img src={item.strDrinkThumb} width={230} className='rounded-3' alt={item.strDrink} />
                 </div>
                 <div className='col'>
@@ -50,18 +61,21 @@ export default function Detail(){
                         <div className='fw-bold'>
                             <p>Category</p>
                             <p>Instructions</p>
-                            <p>Glass </p>
-                            <p>Ingredients: </p>
+                            <p>Glass</p>
+                            <p>Ingredients</p>
                         </div>
                         <div>
                             <p>: {item.strCategory}</p>
                             <p>: {item.strInstructions}</p>
                             <p>: {item.strGlass}</p>
-                            {ingredients.map((ingredient) => {
-                                if (ingredient){
-                                    return <ul><li>{ingredient}</li></ul>
-                                }
-                            })}
+                            <div className='d-flex flex-row nowrap'>
+                                :
+                                {ingredients.map((ingredient) => {
+                                    if (ingredient){
+                                        return <ul><li>{ingredient}</li></ul>
+                                    }
+                                })}
+                            </div>
                         </div>
                     </div>
                     <hr />

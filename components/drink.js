@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 // import {Link} from "react-router-dom"
 
-const Drink = ({ dataDrink }) => {
+function Drink({dataDrink}) {
   return (
     <div className="container">
       <div className="row">
@@ -21,10 +21,10 @@ const Drink = ({ dataDrink }) => {
                   {/* <Meta title="Europe Street beat" description="www.instagram.com" /> */}
               </Card>
             </Link>
+            </div>
+            ))}
           </div>
-        ))}
-      </div>
-    </div>
+        </div>
   );
 };
 
